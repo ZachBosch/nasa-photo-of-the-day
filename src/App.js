@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import MarsPhoto from './MarsPhoto'
 import NasaPhoto from './NasaPhoto'
 import axios from 'axios'
 import "./App.css";
-import { API_KEY, BASE_URL, MARS_URL } from "./constants";
+import { API_KEY, BASE_URL } from "./constants";
 
 function App() {
   const [nasaData, setNasaData] = useState([])
-  const [marsPhoto, setMarsPhoto] = useState([])
 
   useEffect(() => {
     axios
@@ -39,7 +37,7 @@ function App() {
     <div className="App">
       <header>
         <h1>NASA</h1>
-        <h2>Astronomy Photo of the Day</h2>
+        <h2>(A)stronomy (P)hoto (o)f (t)he (D)ay</h2>
       </header>
       <NasaPhoto nasaData={nasaData} />
       <footer>
